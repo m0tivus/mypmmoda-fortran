@@ -1,0 +1,17 @@
+---
+version: 1.0
+
+build:
+  compiler: mvcc
+  src: pyDAMPF/EXECUTE_pyDAMPF
+
+package:
+  name: mypmmoda
+  version: 0.1.0
+  metadata:
+    short_description: Point Mass Model
+    license: "GPLv3"
+    author: "PI Horacio V. Guzman Ph.D., B.Sc. Willy Menacho N."
+    url: "https://github.com/govarguz/pyDAMPF"
+    upstream_url: "https://github.com/m0tivus/mypmmoda-fortran"
+    long_description: ./USAGE.md

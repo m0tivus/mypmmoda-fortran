@@ -1,0 +1,3 @@
+[submodule "pyDAMPF"]
+	path = pyDAMPF
+	url = git@github.com:govarguz/pyDAMPF.git
