@@ -3,7 +3,8 @@ version: 1.0
 
 build:
   compiler: mvcc
-  src: pyDAMPF/EXECUTE_pyDAMPF
+  source: pyDAMPF/EXECUTE_pyDAMPF
+  filesystem: filesystem
 
 package:
   name: mypmmoda
