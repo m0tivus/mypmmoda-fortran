@@ -1,8 +1,6 @@
 <div align="center">
 
-  <h1>Motivus algorithm using <code>wasm-pack</code></h1>
-
-  <strong>A template for kick starting a Rust and WebAssembly project powered by <a href="https://motivus.cl/">Motivus Waterbear Cluster</a> processing  power.</strong>
+  <h1>mypmmoda on Motivus</h1>
 
   <h3>
     <a href="https://motivus.cl/documentation/">Learn more</a>
