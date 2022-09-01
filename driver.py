@@ -12,6 +12,7 @@ async def motivus_task(naux):
         # published build
         # 'algorithm': "mypmmoda",
         # 'algorithm_version': "0.1.0",
+        'params': ['mypmmoda_MOD_mainbim', naux],
         'preload_files': {
             '/inputs.ini': motivus.read_file("./inputs.ini")
         },

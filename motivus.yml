@@ -2,7 +2,7 @@
 version: 1.0
 
 build:
-  compiler: mvcc
+  compiler: mvfc
   source: pyDAMPF/EXECUTE_pyDAMPF
   filesystem: filesystem
 

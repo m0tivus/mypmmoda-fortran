@@ -34,13 +34,13 @@ FCFLAGS:=$(DEBUG) $(OPT) -Wall
 CCFLAGS:=$(DEBUG) --target=wasm32-unknown-emscripten $(OPT) -c -flto -emit-llvm -m32 -Isrc -Wall
 EMSFLAGS:=$(OPT) $(DEBUG) -m32 -Wall -flto
 # WLDFLAGS:=-lm --preload-file $(FILESYSTEM_DIR)@/ -s ASSERTIONS=1 -s ALLOW_MEMORY_GROWTH=1 -s EXPORTED_RUNTIME_METHODS=FS,PATH,ccall,cwrap 
-WLDFLAGS:=-Wl,-u,atexit -Wl,-u,__cxa_atexit -s ERROR_ON_UNDEFINED_SYMBOLS=1 -lm --preload-file $(FILESYSTEM_DIR)@/ -s ASSERTIONS=1 -s ALLOW_MEMORY_GROWTH=1 -s EXPORTED_RUNTIME_METHODS=FS,PATH -s 'EXPORT_NAME="createModule"'
- # WLDFLAGS:=-Wl,-u,atexit -Wl,-u,__cxa_atexit -s ERROR_ON_UNDEFINED_SYMBOLS=1  -lm --preload-file $(FILESYSTEM_DIR)@/ -s ASSERTIONS=1 -s ALLOW_MEMORY_GROWTH=1 -s EXPORTED_RUNTIME_METHODS=FS,PATH
+WLDFLAGS:=-Wl,-u,atexit -Wl,-u,__cxa_atexit -s WASM=1 -s MODULARIZE=1 -s ERROR_ON_UNDEFINED_SYMBOLS=1 -lm --preload-file $(FILESYSTEM_DIR)@/ -s ASSERTIONS=1 -s ALLOW_MEMORY_GROWTH=1 -s EXPORTED_RUNTIME_METHODS=FS,PATH,ccall,cwrap  -s 'EXPORT_NAME="createModule"' -s MAXIMUM_MEMORY=4GB -fsanitize=address
+# WLDFLAGS:=-Wl,-u,atexit -Wl,-u,__cxa_atexit -s ERROR_ON_UNDEFINED_SYMBOLS=1  -lm --preload-file $(FILESYSTEM_DIR)@/ -s ASSERTIONS=1 -s ALLOW_MEMORY_GROWTH=1 -s EXPORTED_RUNTIME_METHODS=FS,PATH
 # WLDFLAGS:=-Wl,-u,atexit -Wl,-u,__cxa_atexit -s WASM=1 -s EXPORTED_RUNTIME_METHODS=ccall,cwrap -s MODULARIZE=1 -s ERROR_ON_UNDEFINED_SYMBOLS=1 -s 'EXPORT_NAME="createModule"' #  -s USE_SDL=2 -s LEGACY_GL_EMULATION=1
 ARFLAGS:=cr
 
 # Project config
-NAME:=$(PACKAGE_NAME)
+NAME:=$(PACKAGE)
 # NAME:=assembly
 EXPORTS:=mypmmoda_MOD_mainbim
 LIBS:=/app/lib/libgfortran.a # /app/lib/liblapack.a /app/lib/librefblas.a
